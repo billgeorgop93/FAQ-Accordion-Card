@@ -8,4 +8,4 @@ Because I am little scrappy with JS I used this as help to write the code about 
 This is the preview I made:
 ![](FinishedPreview.png)
 
-Live: https://zer0fr0st93.github.io/FAQ-Accordion-Card/
+Live: https://billgeorgop93.github.io/FAQ-Accordion-Card/
