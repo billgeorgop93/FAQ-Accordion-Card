@@ -1,49 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
-
-:root {
-  /* Text colors */
-  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
-  --soft-red: hsl(14, 88%, 65%);
-  /* Background gradient colors */
-  --soft-violet: hsl(273, 75%, 66%);
-  --soft-blue: hsl(240, 73%, 65%);
-  /* Text gradient colors */
-  --very-dark-grayish-blue: hsl(237, 12%, 33%);
-  --dark-grayish-blue: hsl(240, 6%, 50%);
-  /* Dividers colors */
-  --light-grayish-blue: hsl(240, 5%, 91%);
-}
+/*
+- Soft red: hsl(14, 88%, 65%)
+*/
 
 html {
   box-sizing: initial;
-  font-family: 'Kumbh Sans', sans-serif;
-  font-size: 12px;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
   min-height: 100vh;
   margin: 0;
   padding: 10rem 1rem;
-  background-image: linear-gradient(
-    var(--soft-violet),
-    var(--soft-blue)
-  );
-  color: var(--very-dark-desaturated-blue);
+  font-family: "Kumbh Sans", sans-serif;
+  background-image: linear-gradient(#af67e9, #6565e7);
+  color: var(--text-blue);
 }
 
-h1 {
+h1,
+h2,
+h3 {
   margin-top: 0;
 }
 
 .card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 2rem;
   max-width: 56rem;
   padding: 2.875rem 1.5rem;
-  background-image: url(./images/bg-pattern-mobile.svg);
+  background-image: url("images/bg-pattern-mobile.svg");
   background-repeat: no-repeat;
   background-position: center 0%;
-  background-size: 240px;
+  background-size: 15rem;
 }
 
 .card-box {
@@ -71,7 +64,7 @@ h1 {
 
 .accordion-item {
   padding-top: 1rem;
-  border-bottom: 1px solid var(--light-grayish-blue);
+  border-bottom: 1px solid #e7e7e9;
 }
 
 .accordion-item h2 {
@@ -80,20 +73,20 @@ h1 {
 
 .accordion-question {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   border: none;
   background: transparent;
   margin-bottom: 1rem;
   padding: 0.2rem;
-  font-size: 14px;
+  font-size: 0.875rem;
+  font-family: "Kumbh Sans", sans-serif;
   text-align: left;
 }
 
 .accordion-question:hover {
-  color: var(--soft-red);
-  transition: all 0.2s;
+  color: #f47c57;
 }
 
 .accordion-question.open {
@@ -101,11 +94,12 @@ h1 {
 }
 
 .accordion-question::after {
-  content: '';
+  content: "";
   display: block;
   width: 0.625rem;
+  height: 1rem;
   border: none;
-  background-image: url(./images/icon-arrow-down.svg);
+  background-image: url("/images/icon-arrow-down.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -115,15 +109,18 @@ h1 {
 .accordion-question:focus,
 .accordion-question:focus-visible {
   border: none;
-  outline: dashed 1px rgba(0, 0, 0, 0.25);
+}
+
+.accordion-question.open {
+  font-weight: 700;
 }
 
 .accordion-question.open::after {
   transform: rotate(180deg);
 }
 
-.accordion-answer {
-  font-size: 12px;
+.accordion-content {
+  font-size: 0.75rem;
   line-height: 1.4;
   padding-bottom: 1rem;
 }
@@ -145,9 +142,20 @@ h1 {
   display: block;
 }
 
-/* Desktop style */
-@media (min-width: 56px) {
-  
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+/* DESKTOP STYLES */
+
+@media (min-width: 56em) {
   body {
     padding: 5rem;
   }
@@ -156,8 +164,8 @@ h1 {
     position: relative;
     display: flex;
     margin: 0 auto;
-    padding: 70px 100px 70px 0;
-    background-image: url(./images/bg-pattern-desktop.svg);
+    padding: 4.375rem 6.25rem 4.375rem 0;
+    background-image: url("images/bg-pattern-desktop.svg");
     background-size: 45%;
     background-position: -13% center;
   }
@@ -167,7 +175,7 @@ h1 {
     position: absolute;
     z-index: 1;
     top: 57%;
-    left: 0%;
+    left: 0;
     transform: translateX(-50%) translateY(-50%);
   }
 
@@ -186,8 +194,8 @@ h1 {
     position: relative;
     top: auto;
     left: auto;
-    max-width: 400px;
-    transform:  translateX(-4rem);
+    max-width: 25rem;
+    transform: translateX(-4rem);
   }
 
   .card-text {
